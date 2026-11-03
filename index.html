@@ -1,16 +1,16 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>جمعية ألهمني لتنمية القدرات الشبابية - بوابة التسجيل والمشاركة</title>
-    <!-- استيراد الخطوط العربية العصرية -->
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <!-- مكتبة أيقونات FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         :root {
-            --primary-color: #1e3a8a; /* الأزرق الملكي المعتمد لهوية ألهمني */
+            --primary-color: #1e3a8a;
             --secondary-color: #3b82f6;
             --accent-color: #f59e0b;
             --bg-color: #f8fafc;
@@ -38,7 +38,6 @@
             justify-content: space-between;
         }
 
-        /* الهيدر وشريط التنقل */
         header {
             background-color: var(--card-bg);
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
@@ -69,7 +68,6 @@
             font-weight: 700;
         }
 
-        /* الحاويات والصفحات */
         .container {
             max-width: 900px;
             margin: 2rem auto;
@@ -87,7 +85,6 @@
             border-top: 5px solid var(--primary-color);
         }
 
-        /* الشاشات (تنتقل تفاعلياً عبر JavaScript) */
         .screen {
             display: none;
         }
@@ -102,7 +99,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* عناصر الواجهة الأولى */
         .hero-title {
             font-size: 1.8rem;
             color: var(--primary-color);
@@ -165,7 +161,6 @@
             transform: translateY(-2px);
         }
 
-        /* شاشة الكشف والتوعية (الهكر) */
         .hack-alert-box {
             background-color: #fef2f2;
             border: 2px solid var(--danger-color);
@@ -258,7 +253,6 @@
             font-size: 1.2rem;
         }
 
-        /* المحتوى التوعوي والأقسام */
         .awareness-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -298,7 +292,6 @@
             line-height: 1.5;
         }
 
-        /* الاختبار التفاعلي */
         .quiz-container {
             margin-top: 1rem;
         }
@@ -351,7 +344,6 @@
             display: block;
         }
 
-        /* أزرار التنقل بين الأقسام */
         .nav-buttons {
             display: flex;
             justify-content: space-between;
@@ -368,7 +360,6 @@
             background-color: #475569;
         }
 
-        /* الفوتر الرسمي الإلزامي */
         footer {
             background-color: var(--primary-color);
             color: white;
@@ -379,23 +370,23 @@
             margin-top: auto;
         }
 
-        /* التجاوب مع الجوال */
         @media (max-width: 768px) {
             .card {
                 padding: 1.5rem;
             }
+
             .hero-title {
                 font-size: 1.4rem;
             }
         }
     </style>
 </head>
+
 <body>
 
-    <!-- هيدر الموقع -->
     <header>
         <div class="brand">
-            <!-- استخدام اسم ملف الشعار بالضبط: logo.png.JPG -->
+            <!-- اسم ملف الشعار الصحيح -->
             <img src="logo.png.JPG" alt="شعار جمعية ألهمني">
             <div class="brand-text">
                 <h1>جمعية ألهمني لتنمية القدرات الشبابية</h1>
@@ -403,44 +394,52 @@
         </div>
     </header>
 
-    <!-- المحتوى الرئيسي -->
     <div class="container">
 
-        <!-- الشاشة الأولى: واجهة الدعوة الرسمية (خدعة التصيد) -->
+        <!-- الشاشة الأولى -->
         <div id="screen-1" class="screen active">
             <div class="card">
                 <h2 class="hero-title">دعوة خاصة: الانضمام إلى ورشة "مهارات القيادة الرقمية والذكاء الاصطناعي"</h2>
+
                 <p class="hero-desc">
                     في إطار جهود جمعية ألهمني المستمرة لتمكين الشباب بمهارات حياتية ومعرفية ملهمة، ندعوكم للمشاركة في الورشة التطويرية الحصرية. سجل بياناتك أدناه لتأكيد مقعدك واستلام رابط الدخول مباشرة عبر البريد الإلكتروني.
                 </p>
+
                 <form id="phishingForm" onsubmit="triggerTrap(event)">
                     <div class="form-group">
                         <label for="fullName">الاسم الكامل:</label>
                         <input type="text" id="fullName" class="form-control" placeholder="أدخل اسمك الكريم" required>
                     </div>
+
                     <div class="form-group">
                         <label for="badgeNumber">رقم البادج:</label>
                         <input type="text" id="badgeNumber" class="form-control" placeholder="أدخل رقم البادج الخاص بك" required>
                     </div>
+
                     <button type="submit" class="btn">تأكيد التسجيل والمشاركة</button>
                 </form>
             </div>
         </div>
 
-        <!-- الشاشة الثانية: لحظة الكشف والتوعية (محاكاة الاختراق) -->
+        <!-- الشاشة الثانية -->
         <div id="screen-2" class="screen">
             <div class="card">
                 <div class="hack-alert-box">
                     <div class="unlock-icon">🔓</div>
                     <h2>تنبيه أمني</h2>
-                    <p id="hackMessage">هكرنااااك يا زائرنا الكريم! دخلت رابط ما تعرف مصدره وكتبت معلوماتك على طول. لو كان هجوم احتيال حقيقي، كانت بياناتك بيد المحتال الحين.</p>
-                    
+
+                    <p id="hackMessage">
+                        هذه محاكاة توعوية! لقد أدخلت بياناتك في صفحة غير موثوقة. لو كان هجوم تصيد حقيقياً، لربما أصبحت بياناتك في يد المحتال.
+                    </p>
+
                     <div class="stolen-data-card">
-                        <h3><i class="fa-solid fa-triangle-exclamation"></i> البيانات اللي "سُرِقت" منك الحين:</h3>
+                        <h3><i class="fa-solid fa-triangle-exclamation"></i> البيانات التي أدخلتها في المحاكاة:</h3>
+
                         <div class="data-row">
                             <span class="data-label">الاسم</span>
                             <span class="data-value" id="displayUser">زائر</span>
                         </div>
+
                         <div class="data-row">
                             <span class="data-label">رقم البادج</span>
                             <span class="data-value" id="displayBadge">0000</span>
@@ -448,9 +447,9 @@
                     </div>
 
                     <ul class="tips-list">
-                        <li>تأكد من مصدر أي رابط قبل ما تفتحه أو تدخل فيه بياناتك.</li>
-                        <li>لا تكتب معلوماتك في صفحة ما تعرف مين وراها.</li>
-                        <li>لو الرابط يستعجلك أو يغريك بعرض — خذه بشك.</li>
+                        <li>تأكد من مصدر أي رابط قبل فتحه أو إدخال بياناتك فيه.</li>
+                        <li>لا تكتب معلوماتك في صفحة لا تعرف الجهة المسؤولة عنها.</li>
+                        <li>إذا كان الرابط يستعجلك أو يغريك بعرض، فتحقق منه أولاً.</li>
                     </ul>
                 </div>
 
@@ -458,33 +457,41 @@
             </div>
         </div>
 
-        <!-- الشاشة الثالثة: المحتوى التوعوي الشامل -->
+        <!-- الشاشة الثالثة -->
         <div id="screen-3" class="screen">
             <div class="card">
                 <h2 class="hero-title">دليل الحماية والتوعية الرقمية</h2>
-                <p class="hero-desc">تعرف على أساليب المخترقين وكيف تحمي بياناتك الشخصية والمهنية بكل إتقان.</p>
+
+                <p class="hero-desc">
+                    تعرف على أساليب التصيد الإلكتروني وكيف تحمي بياناتك الشخصية والمهنية.
+                </p>
 
                 <div class="awareness-grid">
+
                     <div class="awareness-card">
                         <i class="fa-solid fa-fish-fins"></i>
                         <h3>ما هو التصيد الإلكتروني؟</h3>
-                        <p>أسلوب احتيالي خبيث يهدف لسرقة البيانات الحساسة عبر انتحال صفة جهات رسمية موثوقة.</p>
+                        <p>أسلوب احتيالي يهدف إلى سرقة البيانات الحساسة عبر انتحال صفة جهات رسمية موثوقة.</p>
                     </div>
+
                     <div class="awareness-card">
                         <i class="fa-solid fa-link-slash"></i>
                         <h3>الروابط المزيفة</h3>
-                        <p>تستخدم روابط تقلد المواقع الأصلية مع تغيير بسيط في الحروف (مثل استبدال حرف بآخر) لخداع الضحية.</p>
+                        <p>تستخدم روابط تقلد المواقع الأصلية مع تغيير بسيط في الحروف لخداع المستخدم.</p>
                     </div>
+
                     <div class="awareness-card">
                         <i class="fa-solid fa-masks-theater"></i>
                         <h3>انتحال الهوية</h3>
-                        <p>استغلال أسماء جمعيات خيرية، أو مؤسسات حكومية وبنوك لكسب الثقة السريعة.</p>
+                        <p>استغلال أسماء الجمعيات والمؤسسات الحكومية والبنوك لكسب الثقة السريعة.</p>
                     </div>
+
                     <div class="awareness-card">
                         <i class="fa-solid fa-clock-rotate-left"></i>
                         <h3>رسائل الاستعجال</h3>
-                        <p>أسلوب تخويفي يضغط عليك نفسياً بعبارات مثل "حسابك سيُغلق خلال ساعات" لدفعك للتصرف دون تفكير.</p>
+                        <p>الضغط النفسي بعبارات مثل "حسابك سيُغلق خلال ساعات" لدفعك للتصرف دون تفكير.</p>
                     </div>
+
                 </div>
 
                 <div class="nav-buttons">
@@ -494,20 +501,36 @@
             </div>
         </div>
 
-        <!-- الشاشة الرابعة: الاختبار التفاعلي (Quiz) -->
+        <!-- الشاشة الرابعة -->
         <div id="screen-4" class="screen">
             <div class="card">
                 <h2 class="hero-title">اختبر جاهزيتك الرقمية</h2>
-                <p class="hero-desc">اختر التصرف السليم في المواقف التالية واكتشف مدى وعيك:</p>
+
+                <p class="hero-desc">
+                    اختر التصرف السليم في الموقف التالي واكتشف مدى وعيك الرقمي.
+                </p>
 
                 <div class="quiz-container">
                     <div class="question-box">
-                        <h3 style="margin-bottom: 0.5rem; color: var(--primary-color);">الموقف: وصلتك رسالة نصية من جهة تبدو رسمية تطلب منك تحديث بياناتك المصرفية فوراً عبر رابط مختصر، ما هو التصرف السليم؟</h3>
+
+                        <h3 style="margin-bottom: 0.5rem; color: var(--primary-color);">
+                            الموقف: وصلتك رسالة نصية من جهة تبدو رسمية تطلب منك تحديث بياناتك المصرفية فوراً عبر رابط مختصر، ما هو التصرف السليم؟
+                        </h3>
+
                         <ul class="options-list">
-                            <li onclick="checkAnswer(this, false)">أ) أضغط على الرابط وأحدث بياناتي بسرعة قبل إغلاق الحساب.</li>
-                            <li onclick="checkAnswer(this, true)">ب) أتجاهل الرابط تماماً وأتواصل مع الجهة الرسمية عبر قنواتها المعتمدة.</li>
-                            <li onclick="checkAnswer(this, false)">ج) أرسل بياناتي لأحد أصدقائي ليتأكد من صحة الرابط نيابة عني.</li>
+                            <li onclick="checkAnswer(this, false)">
+                                أ) أضغط على الرابط وأحدث بياناتي بسرعة قبل إغلاق الحساب.
+                            </li>
+
+                            <li onclick="checkAnswer(this, true)">
+                                ب) أتجاهل الرابط وأتواصل مع الجهة الرسمية عبر قنواتها المعتمدة.
+                            </li>
+
+                            <li onclick="checkAnswer(this, false)">
+                                ج) أرسل بياناتي لأحد أصدقائي ليتأكد من صحة الرابط نيابة عني.
+                            </li>
                         </ul>
+
                         <div id="quiz-feedback" class="feedback"></div>
                     </div>
                 </div>
@@ -519,94 +542,118 @@
             </div>
         </div>
 
-        <!-- الشاشة الخامسة: الخاتمة -->
+        <!-- الشاشة الخامسة -->
         <div id="screen-5" class="screen">
             <div class="card" style="text-align: center;">
+
                 <div style="font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem;">
                     <i class="fa-solid fa-award"></i>
                 </div>
+
                 <h2 class="hero-title">مبروك إتمام التجربة التوعوية!</h2>
+
                 <p class="hero-desc" style="font-size: 1.2rem; font-weight: 600; color: var(--text-color); margin: 2rem 0; padding: 1.5rem; background: #f8fafc; border-radius: 10px; border-right: 5px solid var(--primary-color);">
                     «لا تجعل ثقتك بالمظهر تسبق تحققك من المصدر؛ فوعيك الرقمي هو خط دفاعك الأول».
                 </p>
+
                 <button class="btn" onclick="resetExperience()">إعادة التجربة من البداية</button>
             </div>
         </div>
 
     </div>
 
-    <!-- الفوتر الرسمي الإلزامي -->
     <footer>
         تمت بواسطة جمعية ألهمني لتنمية القدرات الشبابية
     </footer>
 
-    <!-- سكريبت البرمجة التفاعلية -->
     <script>
-        // دالة التنقل بين الشاشات
+        // التنقل بين الشاشات
         function goToScreen(screenNumber) {
             document.querySelectorAll('.screen').forEach(screen => {
                 screen.classList.remove('active');
             });
+
             document.getElementById(`screen-${screenNumber}`).classList.add('active');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         }
 
-        // محاكاة اصطياد الفخ التقني وعرض البيانات المدخلة
+        // محاكاة التوعية بالتصيد الإلكتروني
         function triggerTrap(event) {
-            event.preventDefault(); // منع إرسال بيانات حقيقية لأي خادم حفاظاً على الخصوصية
+            event.preventDefault();
 
-            // جلب البيانات المدخلة من الحقول
             const name = document.getElementById('fullName').value.trim();
             const badge = document.getElementById('badgeNumber').value.trim();
 
-            // تحديث نصوص شاشة الكشف بالاسم المدخل تماماً
             if (name) {
-                document.getElementById('hackMessage').innerText = `هكرنااااك يا ${name} ! دخلت رابط ما تعرف مصدره وكتبت معلوماتك على طول. لو كان هجوم احتيال حقيقي، كانت بياناتك بيد المحتال الحين.`;
+                document.getElementById('hackMessage').innerText =
+                    `هذه محاكاة توعوية يا ${name}! لقد أدخلت بياناتك في صفحة غير موثوقة. لو كان هجوم تصيد حقيقياً، لربما أصبحت بياناتك في يد المحتال.`;
+
                 document.getElementById('displayUser').innerText = name;
             }
+
             if (badge) {
                 document.getElementById('displayBadge').innerText = badge;
             }
 
-            // تفريغ الحقول محلياً لحماية الخصوصية
+            // لا يتم إرسال البيانات إلى أي خادم
             document.getElementById('fullName').value = '';
             document.getElementById('badgeNumber').value = '';
 
-            // الانتقال الفوري لشاشة مفاجأة الاختراق
             goToScreen(2);
         }
 
-        // فحص إجابة الاختبار التفاعلي
+        // فحص إجابة الاختبار
         function checkAnswer(element, isCorrect) {
             const feedback = document.getElementById('quiz-feedback');
             const options = element.parentElement.querySelectorAll('li');
-            
-            options.forEach(opt => opt.style.pointerEvents = 'none'); // تعطيل النقر المتكرر
+
+            options.forEach(opt => {
+                opt.style.pointerEvents = 'none';
+            });
 
             if (isCorrect) {
                 element.style.backgroundColor = '#d1fae5';
                 element.style.borderColor = '#10b981';
+
                 feedback.className = 'feedback correct';
-                feedback.innerHTML = '<strong>إجابة صحيحة وموفقة!</strong> الجهات الرسمية لا تطلب بيانات حساسة عبر روابط مختصرة، والتحقق المسبق يحميك من الاحتيال.';
+
+                feedback.innerHTML =
+                    '<strong>إجابة صحيحة وموفقة!</strong> تحقق من مصدر الرسائل عبر القنوات الرسمية ولا تشارك بياناتك الحساسة عبر الروابط.';
             } else {
                 element.style.backgroundColor = '#fee2e2';
                 element.style.borderColor = '#ef4444';
+
                 feedback.className = 'feedback incorrect';
-                feedback.innerHTML = '<strong>إجابة خاطئة.</strong> الضغط على الروابط في رسائل الاستعجال يعرضك لاختراق مباشر وسرقة بياناتك.';
+
+                feedback.innerHTML =
+                    '<strong>إجابة غير صحيحة.</strong> لا تضغط على الروابط المشبوهة، وتواصل مع الجهة الرسمية عبر قنواتها المعتمدة.';
             }
         }
 
-        // إعادة ضبط التجربة
+        // إعادة التجربة
         function resetExperience() {
             document.querySelectorAll('.options-list li').forEach(opt => {
                 opt.style.pointerEvents = 'auto';
                 opt.style.backgroundColor = 'white';
                 opt.style.borderColor = '#cbd5e1';
             });
+
             document.getElementById('quiz-feedback').className = 'feedback';
             document.getElementById('quiz-feedback').innerHTML = '';
+
+            document.getElementById('displayUser').innerText = 'زائر';
+            document.getElementById('displayBadge').innerText = '0000';
+
+            document.getElementById('hackMessage').innerText =
+                'هذه محاكاة توعوية! لقد أدخلت بياناتك في صفحة غير موثوقة. لو كان هجوم تصيد حقيقياً، لربما أصبحت بياناتك في يد المحتال.';
+
             goToScreen(1);
         }
     </script>
+
 </body>
 </html>
