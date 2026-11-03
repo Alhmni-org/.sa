@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>جمعية ألهمني لتنمية القدرات الشبابية - بوابة التسجيل والمشاركة</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -95,8 +96,14 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .hero-title {
@@ -210,9 +217,11 @@
         .data-row {
             display: flex;
             justify-content: space-between;
+            gap: 12px;
             padding: 0.5rem 0;
             border-bottom: 1px solid #f1f5f9;
             font-size: 1rem;
+            overflow-wrap: anywhere;
         }
 
         .data-row:last-child {
@@ -222,11 +231,13 @@
         .data-label {
             font-weight: 600;
             color: var(--text-light);
+            flex-shrink: 0;
         }
 
         .data-value {
             font-weight: 700;
             color: var(--danger-color);
+            overflow-wrap: anywhere;
         }
 
         .tips-list {
@@ -347,6 +358,7 @@
         .nav-buttons {
             display: flex;
             justify-content: space-between;
+            gap: 12px;
             margin-top: 2rem;
         }
 
@@ -378,15 +390,27 @@
             .hero-title {
                 font-size: 1.4rem;
             }
+
+            header {
+                padding: 1rem;
+            }
+
+            .brand-text h1 {
+                font-size: 0.95rem;
+            }
+
+            .nav-buttons {
+                flex-wrap: wrap;
+            }
         }
     </style>
 </head>
 
 <body>
 
+    <!-- الهيدر والشعار -->
     <header>
         <div class="brand">
-            <!-- اسم ملف الشعار الصحيح -->
             <img src="logo.png.JPG" alt="شعار جمعية ألهمني">
             <div class="brand-text">
                 <h1>جمعية ألهمني لتنمية القدرات الشبابية</h1>
@@ -396,36 +420,59 @@
 
     <div class="container">
 
-        <!-- الشاشة الأولى -->
+        <!-- الشاشة الأولى: التسجيل التجريبي -->
         <div id="screen-1" class="screen active">
             <div class="card">
-                <h2 class="hero-title">دعوة خاصة: الانضمام إلى ورشة "مهارات القيادة الرقمية والذكاء الاصطناعي"</h2>
+
+                <h2 class="hero-title">
+                    دعوة خاصة: الانضمام إلى ورشة "مهارات القيادة الرقمية والذكاء الاصطناعي"
+                </h2>
 
                 <p class="hero-desc">
-                    في إطار جهود جمعية ألهمني المستمرة لتمكين الشباب بمهارات حياتية ومعرفية ملهمة، ندعوكم للمشاركة في الورشة التطويرية الحصرية. سجل بياناتك أدناه لتأكيد مقعدك واستلام رابط الدخول مباشرة عبر البريد الإلكتروني.
+                    في إطار جهود جمعية ألهمني المستمرة لتمكين الشباب بمهارات حياتية ومعرفية ملهمة، ندعوكم للمشاركة في الورشة التطويرية الحصرية. سجل بياناتك أدناه لتأكيد مقعدك.
                 </p>
 
                 <form id="phishingForm" onsubmit="triggerTrap(event)">
+
                     <div class="form-group">
                         <label for="fullName">الاسم الكامل:</label>
-                        <input type="text" id="fullName" class="form-control" placeholder="أدخل اسمك الكريم" required>
+                        <input
+                            type="text"
+                            id="fullName"
+                            class="form-control"
+                            placeholder="أدخل اسمك الكريم"
+                            required
+                        >
                     </div>
 
                     <div class="form-group">
-                        <label for="badgeNumber">رقم البادج:</label>
-                        <input type="text" id="badgeNumber" class="form-control" placeholder="أدخل رقم البادج الخاص بك" required>
+                        <label for="email">البريد الإلكتروني:</label>
+                        <input
+                            type="email"
+                            id="email"
+                            class="form-control"
+                            placeholder="أدخل بريدك الإلكتروني"
+                            required
+                        >
                     </div>
 
-                    <button type="submit" class="btn">تأكيد التسجيل والمشاركة</button>
+                    <button type="submit" class="btn">
+                        تأكيد التسجيل والمشاركة
+                    </button>
+
                 </form>
+
             </div>
         </div>
 
-        <!-- الشاشة الثانية -->
+        <!-- الشاشة الثانية: التوعية -->
         <div id="screen-2" class="screen">
             <div class="card">
+
                 <div class="hack-alert-box">
+
                     <div class="unlock-icon">🔓</div>
+
                     <h2>تنبيه أمني</h2>
 
                     <p id="hackMessage">
@@ -433,7 +480,11 @@
                     </p>
 
                     <div class="stolen-data-card">
-                        <h3><i class="fa-solid fa-triangle-exclamation"></i> البيانات التي أدخلتها في المحاكاة:</h3>
+
+                        <h3>
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                            البيانات المدخلة في المحاكاة:
+                        </h3>
 
                         <div class="data-row">
                             <span class="data-label">الاسم</span>
@@ -441,9 +492,10 @@
                         </div>
 
                         <div class="data-row">
-                            <span class="data-label">رقم البادج</span>
-                            <span class="data-value" id="displayBadge">0000</span>
+                            <span class="data-label">البريد الإلكتروني</span>
+                            <span class="data-value" id="displayEmail">---</span>
                         </div>
+
                     </div>
 
                     <ul class="tips-list">
@@ -451,15 +503,24 @@
                         <li>لا تكتب معلوماتك في صفحة لا تعرف الجهة المسؤولة عنها.</li>
                         <li>إذا كان الرابط يستعجلك أو يغريك بعرض، فتحقق منه أولاً.</li>
                     </ul>
+
+                    <p style="font-size:0.9rem; margin-top:1rem; color:#065f46;">
+                        ملاحظة: هذه تجربة توعوية فقط، ولم يتم إرسال بياناتك أو حفظها في خادم.
+                    </p>
+
                 </div>
 
-                <button class="btn" onclick="goToScreen(3)">تابع استكشاف الدليل التوعوي الكامل</button>
+                <button class="btn" onclick="goToScreen(3)">
+                    تابع استكشاف الدليل التوعوي الكامل
+                </button>
+
             </div>
         </div>
 
-        <!-- الشاشة الثالثة -->
+        <!-- الشاشة الثالثة: الدليل التوعوي -->
         <div id="screen-3" class="screen">
             <div class="card">
+
                 <h2 class="hero-title">دليل الحماية والتوعية الرقمية</h2>
 
                 <p class="hero-desc">
@@ -471,39 +532,54 @@
                     <div class="awareness-card">
                         <i class="fa-solid fa-fish-fins"></i>
                         <h3>ما هو التصيد الإلكتروني؟</h3>
-                        <p>أسلوب احتيالي يهدف إلى سرقة البيانات الحساسة عبر انتحال صفة جهات رسمية موثوقة.</p>
+                        <p>
+                            أسلوب احتيالي يهدف إلى سرقة البيانات الحساسة عبر انتحال صفة جهات رسمية موثوقة.
+                        </p>
                     </div>
 
                     <div class="awareness-card">
                         <i class="fa-solid fa-link-slash"></i>
                         <h3>الروابط المزيفة</h3>
-                        <p>تستخدم روابط تقلد المواقع الأصلية مع تغيير بسيط في الحروف لخداع المستخدم.</p>
+                        <p>
+                            تستخدم روابط تقلد المواقع الأصلية مع تغيير بسيط في الحروف لخداع المستخدم.
+                        </p>
                     </div>
 
                     <div class="awareness-card">
                         <i class="fa-solid fa-masks-theater"></i>
                         <h3>انتحال الهوية</h3>
-                        <p>استغلال أسماء الجمعيات والمؤسسات الحكومية والبنوك لكسب الثقة السريعة.</p>
+                        <p>
+                            استغلال أسماء الجمعيات والمؤسسات الحكومية والبنوك لكسب الثقة السريعة.
+                        </p>
                     </div>
 
                     <div class="awareness-card">
                         <i class="fa-solid fa-clock-rotate-left"></i>
                         <h3>رسائل الاستعجال</h3>
-                        <p>الضغط النفسي بعبارات مثل "حسابك سيُغلق خلال ساعات" لدفعك للتصرف دون تفكير.</p>
+                        <p>
+                            الضغط النفسي بعبارات مثل "حسابك سيُغلق خلال ساعات" لدفعك للتصرف دون تفكير.
+                        </p>
                     </div>
 
                 </div>
 
                 <div class="nav-buttons">
-                    <button class="btn btn-secondary" onclick="goToScreen(2)">السابق</button>
-                    <button class="btn" onclick="goToScreen(4)">الانتقال للاختبار التفاعلي</button>
+                    <button class="btn btn-secondary" onclick="goToScreen(2)">
+                        السابق
+                    </button>
+
+                    <button class="btn" onclick="goToScreen(4)">
+                        الانتقال للاختبار التفاعلي
+                    </button>
                 </div>
+
             </div>
         </div>
 
-        <!-- الشاشة الرابعة -->
+        <!-- الشاشة الرابعة: الاختبار -->
         <div id="screen-4" class="screen">
             <div class="card">
+
                 <h2 class="hero-title">اختبر جاهزيتك الرقمية</h2>
 
                 <p class="hero-desc">
@@ -511,13 +587,15 @@
                 </p>
 
                 <div class="quiz-container">
+
                     <div class="question-box">
 
-                        <h3 style="margin-bottom: 0.5rem; color: var(--primary-color);">
+                        <h3 style="margin-bottom:0.5rem; color:var(--primary-color);">
                             الموقف: وصلتك رسالة نصية من جهة تبدو رسمية تطلب منك تحديث بياناتك المصرفية فوراً عبر رابط مختصر، ما هو التصرف السليم؟
                         </h3>
 
                         <ul class="options-list">
+
                             <li onclick="checkAnswer(this, false)">
                                 أ) أضغط على الرابط وأحدث بياناتي بسرعة قبل إغلاق الحساب.
                             </li>
@@ -529,46 +607,74 @@
                             <li onclick="checkAnswer(this, false)">
                                 ج) أرسل بياناتي لأحد أصدقائي ليتأكد من صحة الرابط نيابة عني.
                             </li>
+
                         </ul>
 
                         <div id="quiz-feedback" class="feedback"></div>
+
                     </div>
+
                 </div>
 
                 <div class="nav-buttons">
-                    <button class="btn btn-secondary" onclick="goToScreen(3)">السابق</button>
-                    <button class="btn" onclick="goToScreen(5)">الخاتمة والرسالة التوعوية</button>
+
+                    <button class="btn btn-secondary" onclick="goToScreen(3)">
+                        السابق
+                    </button>
+
+                    <button class="btn" onclick="goToScreen(5)">
+                        الخاتمة والرسالة التوعوية
+                    </button>
+
                 </div>
+
             </div>
         </div>
 
-        <!-- الشاشة الخامسة -->
+        <!-- الشاشة الخامسة: الخاتمة -->
         <div id="screen-5" class="screen">
-            <div class="card" style="text-align: center;">
+            <div class="card" style="text-align:center;">
 
-                <div style="font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem;">
+                <div style="font-size:3rem; color:var(--primary-color); margin-bottom:1rem;">
                     <i class="fa-solid fa-award"></i>
                 </div>
 
-                <h2 class="hero-title">مبروك إتمام التجربة التوعوية!</h2>
+                <h2 class="hero-title">
+                    مبروك إتمام التجربة التوعوية!
+                </h2>
 
-                <p class="hero-desc" style="font-size: 1.2rem; font-weight: 600; color: var(--text-color); margin: 2rem 0; padding: 1.5rem; background: #f8fafc; border-radius: 10px; border-right: 5px solid var(--primary-color);">
+                <p class="hero-desc" style="
+                    font-size:1.2rem;
+                    font-weight:600;
+                    color:var(--text-color);
+                    margin:2rem 0;
+                    padding:1.5rem;
+                    background:#f8fafc;
+                    border-radius:10px;
+                    border-right:5px solid var(--primary-color);
+                ">
                     «لا تجعل ثقتك بالمظهر تسبق تحققك من المصدر؛ فوعيك الرقمي هو خط دفاعك الأول».
                 </p>
 
-                <button class="btn" onclick="resetExperience()">إعادة التجربة من البداية</button>
+                <button class="btn" onclick="resetExperience()">
+                    إعادة التجربة من البداية
+                </button>
+
             </div>
         </div>
 
     </div>
 
+    <!-- التذييل -->
     <footer>
         تمت بواسطة جمعية ألهمني لتنمية القدرات الشبابية
     </footer>
 
     <script>
+
         // التنقل بين الشاشات
         function goToScreen(screenNumber) {
+
             document.querySelectorAll('.screen').forEach(screen => {
                 screen.classList.remove('active');
             });
@@ -581,34 +687,33 @@
             });
         }
 
-        // محاكاة التوعية بالتصيد الإلكتروني
+        // المحاكاة التوعوية
         function triggerTrap(event) {
+
             event.preventDefault();
 
             const name = document.getElementById('fullName').value.trim();
-            const badge = document.getElementById('badgeNumber').value.trim();
+            const email = document.getElementById('email').value.trim();
 
-            if (name) {
-                document.getElementById('hackMessage').innerText =
-                    `هذه محاكاة توعوية يا ${name}! لقد أدخلت بياناتك في صفحة غير موثوقة. لو كان هجوم تصيد حقيقياً، لربما أصبحت بياناتك في يد المحتال.`;
+            // عرض الاسم والبريد في شاشة التوعية
+            document.getElementById('displayUser').innerText = name;
+            document.getElementById('displayEmail').innerText = email;
 
-                document.getElementById('displayUser').innerText = name;
-            }
+            document.getElementById('hackMessage').innerText =
+                `هذه محاكاة توعوية يا ${name}! لقد أدخلت بياناتك في صفحة غير موثوقة. لو كان هجوم تصيد حقيقياً، لربما أصبحت بياناتك في يد المحتال.`;
 
-            if (badge) {
-                document.getElementById('displayBadge').innerText = badge;
-            }
+            // الانتقال إلى شاشة التوعية
+            goToScreen(2);
 
             // لا يتم إرسال البيانات إلى أي خادم
-            document.getElementById('fullName').value = '';
-            document.getElementById('badgeNumber').value = '';
-
-            goToScreen(2);
+            // لا يتم تخزين البيانات في قاعدة بيانات
         }
 
         // فحص إجابة الاختبار
         function checkAnswer(element, isCorrect) {
+
             const feedback = document.getElementById('quiz-feedback');
+
             const options = element.parentElement.querySelectorAll('li');
 
             options.forEach(opt => {
@@ -616,6 +721,7 @@
             });
 
             if (isCorrect) {
+
                 element.style.backgroundColor = '#d1fae5';
                 element.style.borderColor = '#10b981';
 
@@ -623,7 +729,9 @@
 
                 feedback.innerHTML =
                     '<strong>إجابة صحيحة وموفقة!</strong> تحقق من مصدر الرسائل عبر القنوات الرسمية ولا تشارك بياناتك الحساسة عبر الروابط.';
+
             } else {
+
                 element.style.backgroundColor = '#fee2e2';
                 element.style.borderColor = '#ef4444';
 
@@ -631,28 +739,36 @@
 
                 feedback.innerHTML =
                     '<strong>إجابة غير صحيحة.</strong> لا تضغط على الروابط المشبوهة، وتواصل مع الجهة الرسمية عبر قنواتها المعتمدة.';
+
             }
         }
 
-        // إعادة التجربة
+        // إعادة التجربة من البداية
         function resetExperience() {
+
             document.querySelectorAll('.options-list li').forEach(opt => {
+
                 opt.style.pointerEvents = 'auto';
                 opt.style.backgroundColor = 'white';
                 opt.style.borderColor = '#cbd5e1';
+
             });
 
             document.getElementById('quiz-feedback').className = 'feedback';
             document.getElementById('quiz-feedback').innerHTML = '';
 
             document.getElementById('displayUser').innerText = 'زائر';
-            document.getElementById('displayBadge').innerText = '0000';
+            document.getElementById('displayEmail').innerText = '---';
 
             document.getElementById('hackMessage').innerText =
                 'هذه محاكاة توعوية! لقد أدخلت بياناتك في صفحة غير موثوقة. لو كان هجوم تصيد حقيقياً، لربما أصبحت بياناتك في يد المحتال.';
 
+            document.getElementById('fullName').value = '';
+            document.getElementById('email').value = '';
+
             goToScreen(1);
         }
+
     </script>
 
 </body>
